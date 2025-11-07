@@ -1,0 +1,5 @@
+{
+  "call_id": "abc-123",
+  "transcript": "Agent: Hello! Welcome to ACME support. How can I help you today?\nCustomer: My order was delayed.\nAgent: May I place you on hold for 30 seconds while I check?\nCustomer: Okay.\nAgent: Thanks for waiting. I have updated your order and offered compensation. Anything else?\nCustomer: That's all. Thank you!",
+  "lang": "en"
+}
