@@ -65,3 +65,13 @@ FastAPI, Pydantic, (optional) Redis, (optional) OpenAI/Gemini.
 
 ## 📜 License
 MIT
+
+
+### HF Local Engine (no OpenAI needed)
+Set in `.env`:
+
+```
+ENGINE=HF
+ENGINE_HF_MODEL=google/flan-t5-small
+```
+Then run normally. This uses a small local model via `transformers`.

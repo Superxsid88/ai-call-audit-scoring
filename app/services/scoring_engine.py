@@ -2,6 +2,7 @@ import os, json, hashlib
 from typing import Dict, Any
 from app.utils.cache import maybe_get_cache, maybe_set_cache
 from app.services.scoring_llm import llm_score
+from app.services.scoring_hf import hf_score
 from app.services.scoring_rules import rule_score
 
 ENGINE = os.getenv("ENGINE", "RULE_BASED").upper()
@@ -18,6 +19,8 @@ async def score_call(payload: Dict[str, Any]) -> Dict[str, Any]:
             return cached
     if ENGINE == "LLM":
         result = await llm_score(payload)
+    elif ENGINE == "HF":
+        result = await hf_score(payload)
     else:
         result = await rule_score(payload)
     if ENABLE_CACHE:
